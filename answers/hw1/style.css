@@ -1,0 +1,73 @@
+body {
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.bg_mask {
+    position: absolute;
+    background-size: 100%;
+    background-repeat: repeat;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.row {
+    width: 950px;
+    margin: 5% auto;
+    padding: 0 10%;
+    z-index: 10;
+}
+
+.chanel {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.4);
+    width: 298px;
+    margin: 0 5px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+}
+
+.chanel img {
+    width: 298px;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.chanel .info {
+    position: relative;
+    height: 70px;
+}
+
+.chanel .info .info-text {
+    position: absolute;
+    top: 7px;
+    left: 70px;
+    display: inline-block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.info-text p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.chanel .info .info-img {
+    position: absolute;
+    display: inline-block;
+    left: 10px;
+    top: 11.25px;
+    height: 70px;
+    width: 60px;
+}
+
+.chanel .info .info-img img {
+    display: inline-block;
+    max-width: 45px;
+    max-height: 45px;
+    border-radius: 50%;
+}
