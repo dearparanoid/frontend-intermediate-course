@@ -38,6 +38,7 @@ body {
 .chanel .info {
     position: relative;
     height: 70px;
+    width: 300px;
 }
 
 .chanel .info .info-text {
@@ -52,8 +53,10 @@ body {
 .info-text p {
     margin-top: 5px;
     margin-bottom: 5px;
+    width: 200px;
     white-space: nowrap;
     text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .chanel .info .info-img {
