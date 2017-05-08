@@ -1,47 +1,26 @@
-function getGameStream(game, clientID) {
-    let GameStream = "https://api.twitch.tv/kraken/streams/?game=" +
-        game +
-        "&client_id=pv5emcr029nlrokiw16n0uh5awus0h";
+function getGameStream(game, clientID, limit) {
     $.ajax({
-        url: GameStream,
+        url: "https://api.twitch.tv/kraken/streams",
         type: "GET",
+        data: { client_id: clientID, game: game, limit: limit },
         dataType: "json",
         success: function(data) {
-            console.warn(data);
-            previewPanel(20, data.streams);
+            previewPanel(data.streams);
         },
         error: function() {}
     });
-
 }
 
-function previewPanel(num, data) {
-    let BreakException = {};
+function previewPanel(data) {
     let previewContent = [];
-    let emptyChannel = '<div class="chanel"></div><div class="chanel"></div><div class="chanel"></div><div class="chanel"></div>';
+    let emptyChannel = '<div class="chanel-empty "></div><div class="chanel-empty">';
 
-    try {
-        data.forEach((ele, idx) => {
-            if (idx === num)
-                throw BreakException;
-            else {
-                previewContent =
-                    "<div class='chanel'>" +
-                    "<div class='preview'><img src=" + ele.preview.large + " / > " +
-                    "</div>" +
-                    "<div class='info'>" +
-                    "<div class='avatar'><img src=" + ele.channel.logo + " / > " + "</div>" +
-                    "<div class='intro'>" +
-                    "<div class='name'>" + ele.channel.status + "</div>" +
-                    "<div class='owner'>" + ele.channel.display_name + "</div>" +
-                    "</div>" +
-                    "</div>" +
-                    "</div>";
-                $('#row').append(previewContent);
-            }
-        });
-    } catch (e) {
-        if (e !== BreakException) throw e;
-    }
+    data.forEach((ele, idx) => {
+        $('#row').append($('<div>', { 'class': 'chanel' }));
+        $('.chanel').eq(idx).append($('<div>', { 'class': 'preview' }).append($('<img>', { 'src': ele.preview.large })));
+        $('.chanel').eq(idx).append($('<div>', { 'class': 'info' }).append($('<div>', { 'class': 'avatar' }).append($('<img>', { 'src': ele.channel.logo }))));
+        $('.chanel .info').eq(idx).append($('<div>', { 'class': 'intro' }).append($('<div>', { 'class': 'name', 'text': ele.channel.status })));
+        $('.chanel .info .intro').eq(idx).append($('<div>', { 'class': 'onwer', 'text': ele.channel.display_name }));
+    });
     $('#row').append(emptyChannel);
 }

@@ -44,11 +44,14 @@ body {
     flex-wrap: wrap;
 }
 
+.chanel-empty {
+    width: $chanel-width;
+    margin-top: 20px;
+}
+
 .chanel {
     width: $chanel-width;
     margin-top: 20px;
-    box-sizing: border-box;
-    @include box-border(solid, 2px, black);
     @include prefix(transition, box-shadow $transition-time, webkit);
     @include prefix(transition-timing-function, ease-in-out, webkit);
     img {
@@ -59,7 +62,7 @@ body {
         display: block;
         overflow: hidden;
         img {
-            width: 101%;
+            width: 100%;
             @include prefix(transition, filter $transition-time, webkit);
             @include prefix(transition-timing-function, ease-in-out, webkit);
         }
