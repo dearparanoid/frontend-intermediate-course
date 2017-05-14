@@ -1,0 +1,117 @@
+@import "compass/reset";
+@mixin prefix($property, $value, $vendors: webkit moz ms o) {
+    @if $vendors {
+        @each $vendor in $vendors {
+            #{"-" + $vendor + "-" + $property}: #{$value};
+        }
+    }
+    #{$property}: #{$value};
+}
+
+@mixin box-border($type, $width, $color) {
+    border-style: #{$type};
+    border-width: #{$width};
+    border-color:#{$color};
+}
+
+@mixin word-diaply() {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+$chanel-width: 300px;
+$transition-time: 0.5s;
+$background-color-intro: rgb(192, 192, 192);
+$background-color-wallpaper: black;
+body {
+    background: url(http://cdn.leagueoflegends.com/lolkit/1.1.6/resources/images/bg-default.jpg) no-repeat center;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.container {
+    background: rgba($background-color-wallpaper, 0.5);
+    min-height: 100vh;
+}
+
+.row {
+    max-width: 1000px;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.chanel-empty {
+    width: $chanel-width;
+    margin-top: 20px;
+}
+
+.chanel {
+    width: $chanel-width;
+    margin-top: 20px;
+    @include prefix(transition, box-shadow $transition-time, webkit);
+    @include prefix(transition-timing-function, ease-in-out, webkit);
+    img {
+        width: 100%;
+        display: block;
+    }
+    .preview {
+        display: block;
+        overflow: hidden;
+        img {
+            width: 100%;
+            @include prefix(transition, filter $transition-time, webkit);
+            @include prefix(transition-timing-function, ease-in-out, webkit);
+        }
+    }
+    .info {
+        @include prefix(transition, background $transition-time, webkit);
+        @include prefix(transition-timing-function, ease-in-out, webkit);
+    }
+}
+
+.chanel:hover {
+    box-shadow: 0px 0px 20px 5px rgba($background-color-wallpaper, 0.8);
+}
+
+.chanel:hover .preview img {
+    filter: brightness(1.5);
+}
+
+.chanel:hover .info {
+    background: rgba($background-color-intro, 0.1);
+}
+
+.avatar {
+    $width: 50px;
+    width: $width;
+    height: $width;
+    padding: $width/5;
+    img {
+        border-radius: 50%;
+    }
+}
+
+.info {
+    background: rgba($background-color-intro, 0.3);
+    display: flex;
+}
+
+.intro {
+    color: gainsboro;
+    display: flex;
+    flex-direction: column;
+    line-height: 22px;
+    width: $chanel-width - 100px;
+    .name {
+        margin-top: 7px;
+        @include word-diaply();
+    }
+    .owner {
+        margin-top: 10px;
+        @include word-diaply();
+    }
+}
