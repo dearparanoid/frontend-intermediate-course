@@ -42,11 +42,7 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-}
-
-.chanel-empty {
-    width: $chanel-width;
-    margin-top: 20px;
+    align-items: left;
 }
 
 .chanel {
@@ -63,6 +59,8 @@ body {
         overflow: hidden;
         img {
             width: 100%;
+            height: 180px;
+            background: url(https://goo.gl/xCt77S) no-repeat;
             @include prefix(transition, filter $transition-time, webkit);
             @include prefix(transition-timing-function, ease-in-out, webkit);
         }
@@ -92,6 +90,7 @@ body {
     padding: $width/5;
     img {
         border-radius: 50%;
+        background: url(https://goo.gl/xCt77S) no-repeat;
     }
 }
 
