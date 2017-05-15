@@ -9,7 +9,7 @@ function getGameStream(game, clientID, limit, offset) {
             previewPanel(data.streams, offset);
         },
         error: function() {
-            preLoad(limit, offset);
+            console.log("fail");
         }
     });
 }
@@ -29,19 +29,6 @@ function previewPanel(data, offset) {
         });
         addEmptyChannel();
     }
-}
-
-function preLoad(limit, offset) {
-    let previewContent = [];
-
-    for (let idx = 0 + offset; idx++; idx < limit + offset) {
-        $('#row').append($('<div>', { 'class': 'chanel' }));
-        $('.chanel').eq(idx).append($('<div>', { 'class': 'preview' }).append($('<img>')));
-        $('.chanel').eq(idx).append($('<div>', { 'class': 'info' }).append($('<div>', { 'class': 'avatar' }).append($('<img>'))));
-        $('.chanel .info').eq(idx).append($('<div>', { 'class': 'intro' }).append($('<div>', { 'class': 'name', 'text': "fail" })));
-        $('.chanel .info .intro').eq(idx).append($('<div>', { 'class': 'onwer', 'text': "fail" }));
-    }
-    addEmptyChannel();
 }
 
 function addEmptyChannel() {
