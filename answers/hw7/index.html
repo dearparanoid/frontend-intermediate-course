@@ -6,12 +6,20 @@
     <link rel="stylesheet" href="stylesheets/style.css"></link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/utils.js"></script>
+    <script src="js/lang-en.js"></script>
+    <script src="js/lang-zh-tw.js"></script>
+
 </head>
 <script>
 </script>
 
 <body onload="init()">
     <div class="container">
+        <h1 id="title">Title</h1>
+        <div style="text-align: center">
+            <button class="langButton " onclick="changeLan('zh-tw')">中文
+            <button class="langButton" onclick="changeLan('en')"\>English
+        </div>
         <div class="row" id="row">
         </div>
     </div>

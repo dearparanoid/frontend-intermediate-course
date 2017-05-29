@@ -24,6 +24,7 @@ $chanel-width: 300px;
 $transition-time: 0.5s;
 $background-color-intro: rgb(192, 192, 192);
 $background-color-wallpaper: black;
+$button-color:rgb(243, 156, 18);
 body {
     background: url(http://cdn.leagueoflegends.com/lolkit/1.1.6/resources/images/bg-default.jpg) no-repeat center;
     background-attachment: fixed;
@@ -33,6 +34,28 @@ body {
 .container {
     background: rgba($background-color-wallpaper, 0.5);
     min-height: 100vh;
+    h1 {
+        color: lightgray;
+        text-align: center;
+        font-size: 2.5em;
+        padding-top: 1em;
+    }
+    .langButton {
+        margin: 5px;
+        color: white;
+        background-color: transparent;
+        border: none;
+        font-size: 1em;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.5s ease-in-out;
+        outline: 0;
+        &:hover {
+            background-color: $button-color;
+        }
+    }
 }
 
 .row {
