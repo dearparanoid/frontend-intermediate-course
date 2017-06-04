@@ -1,0 +1,28 @@
+{
+  "name": "hw8",
+  "version": "1.0.0",
+  "description": "hw8",
+  "main": "utils.js",
+  "dependencies": {
+    "webpack": "^2.6.1"
+  },
+  "devDependencies": {
+    "jquery": "^3.2.1"
+  },
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gogogohuang/frontend-intermediate-course.git"
+  },
+  "keywords": [
+    "frontend-course"
+  ],
+  "author": "gogogohuang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gogogohuang/frontend-intermediate-course/issues"
+  },
+  "homepage": "https://github.com/gogogohuang/frontend-intermediate-course#readme"
+}
