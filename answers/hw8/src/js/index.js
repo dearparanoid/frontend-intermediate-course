@@ -26,7 +26,7 @@
  }
 
  function previewPanel(data, offset) {
-     let previewContent = [];
+     let previewContent;
 
      if (typeof data !== 'undefined') {
          data.forEach((ele, idx) => {
@@ -72,16 +72,7 @@
      $("#title").animate({
          opacity: 1,
      }, 100, "linear", function() {
-         switch (lang) {
-             case 'en':
-                 $('#title').text(L.getENTitle());
-                 break;
-             case 'zh-tw':
-                 $('#title').text(L.getTWTitle());
-                 break;
-             default:
-                 break;
-         }
+         $('#title').text(L.default[lang].title);
      });
 
      $('button').removeClass('active');
@@ -104,6 +95,15 @@
 
 
  function init() {
+
+     $('#en').on('click', (e) => {
+         changeLan('en');
+     });
+
+     $('#zh-tw').on('click', (e) => {
+         changeLan('zh-tw');
+     });
+
      titleLayout(lang)
      $(window).on('scroll', debounce(function(event) {
          if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
@@ -113,8 +113,7 @@
      }, 250));
  }
 
- window.onload = function() {
-     init();
- }
 
- window.changeLan = changeLan;
+ $(document).ready(() => {
+     init();
+ });
