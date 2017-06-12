@@ -7,7 +7,7 @@ var rename = require('gulp-rename');
 var babel = require('gulp-babel');
 
 gulp.task('uglify:js', function() {
-    gulp.src('dist/*.js')
+    return gulp.src('dist/bundle.js')
         .pipe(babel({
             presets: ['es2015']
         }))
