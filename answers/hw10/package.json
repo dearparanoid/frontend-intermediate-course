@@ -1,0 +1,44 @@
+{
+  "name": "hw8",
+  "version": "1.0.0",
+  "description": "hw8",
+  "main": "utils.js",
+  "dependencies": {
+    "webpack": "^2.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "eslint": "^4.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean-css": "^3.4.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-inline": "^0.1.3",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglifycss": "^1.0.8",
+    "jquery": "^3.2.1",
+    "sass": "^1.0.0-beta.1"
+  },
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gogogohuang/frontend-intermediate-course.git"
+  },
+  "keywords": [
+    "frontend-course"
+  ],
+  "author": "gogogohuang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gogogohuang/frontend-intermediate-course/issues"
+  },
+  "homepage": "https://github.com/gogogohuang/frontend-intermediate-course#readme"
+}
